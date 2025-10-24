@@ -2,7 +2,6 @@ import db from "#db/client";
 
 /** @returns the employee created according to the provided details */
 export async function createEmployee({ name, birthday, salary }) {
-  // TODO
  try {
   const sql = `
   INSERT INTO employees (name, birthday, salary)
@@ -23,7 +22,16 @@ export async function createEmployee({ name, birthday, salary }) {
 
 /** @returns all employees */
 export async function getEmployees() {
-  // TODO
+  try {
+    const sql = `
+    SELECT * FROM employees
+    `
+    const { rows } = await db.query(sql);
+    return rows;
+  } catch (error) {
+    console.error("Error fetching employees", error);
+    throw error;
+  }
 }
 
 /**
