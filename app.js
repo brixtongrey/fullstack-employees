@@ -5,8 +5,13 @@ const app = express();
 // middleware to parse request
 app.use(express.json());
 
+// routes
+app.get("/", (req, res) => {
+    res.send("Welcome to the Fullstack Employee API.")
+})
+
 // TODO: route /employees to employee router
-app.use("/employee", router);
+app.use("/employees", router);
 
 // error middleware
 app.use((err, req, res, next) => {
