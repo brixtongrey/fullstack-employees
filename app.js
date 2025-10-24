@@ -7,7 +7,7 @@ app.use(express.json());
 
 // routes
 app.get("/", (req, res) => {
-    res.send("Welcome to the Fullstack Employee API.")
+    res.send("Welcome to the Fullstack Employees API.")
 })
 
 // TODO: route /employees to employee router
